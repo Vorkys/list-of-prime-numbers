@@ -1,7 +1,7 @@
 import sys
 import time
 
-print("Biggest number you can give is: {}".format(sys.maxsize))
+print("Biggest number you can give is: {}".format(sys.maxsize))             #shows the limit from the system
 
 start = 2
 division = 1
@@ -10,14 +10,14 @@ prime_num = [1]
 
 number = int(input("Till what number you wish to see the primes? "))
 
-begin = time.time()
+begin = time.time()                                                         #starts the timer
 
 while start < number:
     if start % 2 == 0 and start > 2:                                        #optimize a bit
         print("number {} is even, then we skip.".format(start))
         start +=1
-    while is_divided < 3 and division <= start:
-        if start % division == 0:
+    while is_divided < 3 and division <= start:                             #checks if it is % 0 and if it is more than 2 times it goes to the next number
+        if start % division == 0:                                           # if exactly 2 times then it append the number to the list
             print("{} % {} == 0".format(start, division))
             is_divided += 1
             division += 2
@@ -41,5 +41,5 @@ while start < number:
 
 print(" ".join(map(str, prime_num)))
 
-end = time.time()
-print(end - begin)
+end = time.time()                                                           #stop the timer
+print(end - begin)                                                          #show the timer result
