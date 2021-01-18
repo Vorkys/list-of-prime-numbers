@@ -43,3 +43,4 @@ print(" ".join(map(str, prime_num)))
 
 end = time.time()                                                           #stop the timer
 print(end - begin)                                                          #show the timer result
+input()
