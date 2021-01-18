@@ -6,7 +6,7 @@ print("Biggest number you can give is: {}".format(sys.maxsize))             #sho
 start = 2
 division = 1
 is_divided = 0
-prime_num = [1]
+prime_num = []
 
 number = int(input("Till what number you wish to see the primes? "))
 
