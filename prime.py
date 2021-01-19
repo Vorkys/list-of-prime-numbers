@@ -13,7 +13,7 @@ number = int(input("Till what number you wish to see the primes? "))
 begin = time.time()                                                         #starts the timer
 
 while start < number:
-    if start % 2 == 0 and start > 2:                                        #optimize a bit
+    if start % 2 == 0 and start > 2:                                        #optimize a bit         % - modulo
         print("number {} is even, then we skip.".format(start))
         start +=1
     while is_divided < 3 and division <= start ** (1/2):                    #checks if it is % 0 and if it is more than 2 times it goes to the next number
