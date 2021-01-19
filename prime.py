@@ -16,10 +16,10 @@ while start < number:
     if start % 2 == 0 and start > 2:                                        #optimize a bit
         print("number {} is even, then we skip.".format(start))
         start +=1
-    while is_divided < 3 and division <= start:                             #checks if it is % 0 and if it is more than 2 times it goes to the next number
+    while is_divided < 3 and division <= start ** (1/2):                    #checks if it is % 0 and if it is more than 2 times it goes to the next number
         if start % division == 0:                                           # if exactly 2 times then it append the number to the list
-            print("{} % {} == 0".format(start, division))
-            is_divided += 1
+            print("{} % {} == 0".format(start, division))                   #new optimisation - no need to go untill the last number x ** (1/2) is enough
+            is_divided += 1                                                 #just had to change how many is_divided are needed to be a prime
             division += 2
         else:
             print("{} % {} != 0".format(start, division))
@@ -27,14 +27,13 @@ while start < number:
 
     print("finished {}.".format(start))
 
-    if is_divided < 3:                                                      #number is prime after divisions and hop to the next number
+    if is_divided < 2:                                                      #number is prime after divisions and hop to the next number
         print("{} is prime.".format(start))
         prime_num.append(start)
         start += 1
         division = 1
         is_divided = 0
-    elif is_divided >= 3 and start < number:                                #number isnt prime and can continue
-        print("{} isnt prime.".format(start))
+    elif is_divided >= 2 and start < number:                                #number isnt prime and can continue
         start += 1
         division = 1
         is_divided = 0
